@@ -95,7 +95,7 @@ def main():
         subreddit = reddit.subreddit(reddit_class.subreddit)
         reddit_parse(subreddit, vk)
         print("Posted!")
-        for sleep in range(24*12): #сон на ~24 часа с просыпанием раз в 5 минут
+        for sleep in range(24*12):
             time.sleep(280)
             print("im awake im alive")
 
