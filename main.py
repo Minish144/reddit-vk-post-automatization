@@ -86,12 +86,6 @@ def vk_post(vk, owner_id, post_title, post_pic, unix):
                  publish_date = int(unix))
     time.sleep(1)
 
-def unix_local():
-    time_tuple = (2017, 11, 12, 13, 59, 27, 2, 317, 0)
-    timestamp = time.mktime(time_tuple)
-    print (repr(timestamp))
-    return timestamp+30
-
 def main():
     while(1):
         error = 0
