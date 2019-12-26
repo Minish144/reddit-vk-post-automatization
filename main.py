@@ -11,8 +11,6 @@ import wget
 import os
 import urllib.request
 
-
-
 with open("vk_data.json", "r") as read_file1:
         vk_data = json.load(read_file1)
 with open("reddit_data.json", "r") as read_file2:
@@ -72,7 +70,6 @@ def img_load(sub):
     out.close()
     img = 'img.jpg'
     return img
-
 
 def vk_img_load(img):
     upload = VkUpload(vk_class.session)
