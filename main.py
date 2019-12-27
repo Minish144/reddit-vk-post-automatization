@@ -41,13 +41,16 @@ class reddit_class:
 
 def reddit_parse(subreddit, vk):
     unix = int(time.time())+ 1 * 60 * 60
-    for sub in subreddit.top(limit=reddit_class.limit):
+    for sub in subreddit.hot(limit=reddit_class.limit):
         try:
             os.remove("img.jpg")
         except:
             pass
         post_title = sub.title
-        img = img_load(sub)
+        try:
+            img = img_load(sub)
+        except:
+            continue
         print(f'{post_title}')
         try:
             post_pic = vk_img_load(img); print('Got server for picture...', end=' ')
@@ -88,7 +91,6 @@ def vk_post(vk, owner_id, post_title, post_pic, unix):
 
 def main():
     while(1):
-        error = 0
         vk = vk_class.session.get_api()
         reddit = reddit_class.reddit
         reddit.read_only = False
