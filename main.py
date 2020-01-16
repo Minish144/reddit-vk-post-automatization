@@ -40,7 +40,7 @@ class reddit_class:
                          username=username)
 
 def reddit_parse(subreddit, vk):
-    unix = int(time.time())+ 1 * 60 * 60
+    unix = int(time.time()) + 3600
     for sub in subreddit.hot(limit=reddit_class.limit):
         try:
             os.remove("img.jpg")
@@ -90,15 +90,15 @@ def vk_post(vk, owner_id, post_title, post_pic, unix):
     time.sleep(1)
 
 def main():
-    while(1):
-        vk = vk_class.session.get_api()
-        reddit = reddit_class.reddit
-        reddit.read_only = False
-        subreddit = reddit.subreddit(reddit_class.subreddit)
+    vk = vk_class.session.get_api()
+    reddit = reddit_class.reddit
+    reddit.read_only = False
+    subreddit = reddit.subreddit(reddit_class.subreddit)
+    while True:
         reddit_parse(subreddit, vk)
         print("Posted!")
-        for sleep in range(24*12):
-            time.sleep(280)
+        for sleep in range(26*12):
+            time.sleep(290)
             print("im awake im alive")
 
 if __name__ == "__main__":
