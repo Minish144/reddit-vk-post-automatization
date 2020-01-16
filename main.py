@@ -7,7 +7,6 @@ import praw
 import time
 from datetime import timezone
 from datetime import datetime
-import wget
 import os
 import urllib.request
 
